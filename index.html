@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<title>D3 Visualization</title>
+<meta charset="UTF-8">
+<!--Load css-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<!-- Load d3.js-->
+<script src="https://d3js.org/d3.v4.js"></script>
+<!-- Load bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<!-- Load color scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<!--Q4-->
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-queue.v3.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<!--Q5-->
+<script src="./Question5_files/d3.layout.cloud.js.download"></script>
+
+<body>
+    <!--Header-->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <img class="w3-image w3-opacity-min" src="netflix.jpeg" alt="Netflix" width="1600" height="400">
+        <div class="w3-display-bottomleft w3-padding-large">
+            <h1 class="w3-xxlarge w3-animate-top" style="color: white;">FIT5147</h1>
+        </div>
+    </header>
+    <!--Content-->
+
+    <div class="w3-content" style="max-width:1200px">
+
+        <!--Introduction-->
+        <div class="w3-row-padding w3-padding-64">
+            <!--Left-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">Chengrui Wu</h1>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+            <!--Right-->
+            <div class="w3-col m7 l9 linechart" style="padding-left: 150px;">
+                <h1>--Introduction--</h1>
+                <p>bala bala bala bala bala</p>
+                <p>bala bala bala bala bala</p>
+                <p>bala bala bala bala bala</p>
+            </div>
+
+
+        </div>
+
+        <hr>
+        <!-- Line Chart Section -->
+        <div class="w3-row-padding w3-padding-64">
+            <!--Word-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">About LineChart</h1><br>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+
+            <!--Chart-->
+            <div class="w3-col m7 l9 linechart" style="padding-left: 150px;">
+                <div class="w3-container">
+                    <h3>添加图片简介 -> 添加图片简介 -> 添加图片简介</h3>
+                    <p>添加图片简介 -> 添加图片简介 -> 添加图片简介</p>
+                </div>
+                <div class="w3-container">
+                    <div class="selector">
+                        <label for="yearSelector">Select Year</label><br>
+                        <select id="yearSelector" onchange="drawChart1()">
+                            <option>All</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                        </select>
+                    </div>
+
+                    <svg id="Question1" width="700" height="500"></svg>
+                    <script src="Question1.js"></script>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--Bubble Chart-->
+        <div class="w3-row-padding w3-padding-64">
+            <!--Word-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">About Bubble Chart</h1><br>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+            <!--Chart-->
+            <div class="w3-col m7 l9" style="padding-left: 150px;">
+                <div class="w3-container">
+                    <h3>添加图片简介 -> 添加图片简介 -> 添加图片简介</h3>
+                    <p>添加图片简介 -> 添加图片简介 -> 添加图片简介</p>
+                </div>
+                <div class="w3-container">
+
+
+                    <svg id="Question2" width="700" height="500"></svg>
+                    <div class="tooltip"></div>
+                    <script src="Question2.js"></script>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--Bar Chart-->
+        <div class="w3-row-padding w3-padding-64" class="barchart">
+            <!--Word-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">About Bar Chart</h1><br>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+            <!--Chart-->
+            <div class="w3-col m7 l9" style="padding-left: 150px;">
+                <div class="w3-container">
+                    <h3>添加图片简介 -> 添加图片简介 -> 添加图片简介</h3>
+                    <p>添加图片简介 -> 添加图片简介 -> 添加图片简介</p>
+                </div>
+                <div class="w3-container">
+                    <button onclick="update(data1)" class="button">Certified-Fresh</button>
+                    <button onclick="update(data2)" class="button">Fresh</button>
+                    <button onclick="update(data3)" class="button">Rotten</button>
+                    <svg id="Question3" width="700" height="550"></svg>
+                    <script src="Question3.js"></script>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!--Map-->
+        <div class="w3-row-padding w3-padding-64">
+            <!--Word-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">About Map</h1><br>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+            <!--Chart-->
+            <div class="w3-col m7 l9" style="padding-left: 150px;">
+                <div class="w3-container">
+                    <h3>添加图片简介 -> 添加图片简介 -> 添加图片简介</h3>
+                    <p>添加图片简介 -> 添加图片简介 -> 添加图片简介</p>
+                </div>
+                <div class="w3-container">
+                    <span id="legend" class="w3-left" style="padding-bottom: 20px; padding-left: 400px;"></span><br>
+                    <svg id="Question4" width="700" height="400" class="w3-left"></svg>
+                    <div class="tooltip"></div>
+                    <script src="Question4.js"></script>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!--WordCloud-->
+        <div class="w3-row-padding w3-padding-64">
+            <!--Word-->
+            <div class="w3-col m6 l3">
+                <h1 class="w3-left">About LineChart</h1><br>
+                <h5 class="w3-left">Tradition since 1889</h5>
+            </div>
+            <!--Chart-->
+            <div class="w3-col m7 l9" style="padding-left: 150px;">
+                <div class="w3-container">
+                    <h3>添加图片简介 -> 添加图片简介 -> 添加图片简介</h3>
+                    <p>添加图片简介 -> 添加图片简介 -> 添加图片简介</p>
+                </div>
+                <div class="w3-container">
+                    <svg id="/Question5" width="700" height="600"></svg>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p>Copyright &copy; Chengrui Wu 2021</p>
+
+
+    </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

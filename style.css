@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+}
+
+/*line chart*/
+
+.selector select {
+    width: 100%;
+    min-width: 5ch;
+    max-width: 12ch;
+    border: 1px solid var(--select-border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+    }
+
+.selector select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+div.linechart{
+    padding: 25px 50px 75px 75px;
+}
+
+/*bubble chart*/
+.bubbles:hover {
+    stroke: black;
+}
+
+div.bubblechart{
+   
+}
+
+/*bar chart*/
+.button {
+    background-color: white; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:2em;
+    }
+
+.button {
+background-color: #cd5658; 
+color: white; 
+border: 2px solid #cd5658;
+}
+
+.button:hover {
+background-color: white;
+color: #cd5658;
+}
+
+/*Map*/
+#legend {
+    display: flex;
+}
+
+div.mapchart{
+    padding-left: 100px;
+}
+
+.color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    left: 5px;
+    top: 5px;
+}
+
+div.tooltip {
+    color: #222;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    padding: .2em;
+    text-shadow: #f5f5f5 0 1px 0;
+    opacity: 0.9;
+    position: absolute;
+    border-width: 1px;
+}
+
+.h1{
+    font-weight: 900;
+}
